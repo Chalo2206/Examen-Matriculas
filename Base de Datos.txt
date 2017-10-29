@@ -1,0 +1,57 @@
+CREATE DATABASE Matricula;
+CREATE TABLE Curso(
+    idCurso INT NOT NULL AUTO_INCREMENT,
+    denominacion VARCHAR(45),
+    PRIMARY KEY(idCurso)
+);
+
+CREATE TABLE Alumno(
+    codigo VARCHAR(10) NOT NULL,
+    nombre VARCHAR(45),
+    apPaterno VARCHAR(45),
+    apMaterno VARCHAR(45),
+    PRIMARY KEY(codigo)
+);
+
+CREATE TABLE CursoMatricula(
+    idMatricula INT NOT NULL AUTO_INCREMENT,
+    ciclo VARCHAR(45),
+    calificacion VARCHAR(45),
+    idCurso INT,
+    codigo VARCHAR(10),
+    PRIMARY KEY(idMatricula),
+    FOREIGN KEY(idCurso) REFERENCES Curso(idCurso),
+    FOREIGN KEY(codigo) REFERENCES Alumno(codigo)
+);
+
+//registro de Curso
+INSERT INTO Curso (denominacion) VALUES ('matematica');
+INSERT INTO Curso (denominacion) VALUES ('Transact SQL');
+INSERT INTO Curso (denominacion) VALUES ('Base de Datos');
+INSERT INTO Curso (denominacion) VALUES ('Proyectos II');
+INSERT INTO Curso (denominacion) VALUES ('Cliente Servidor');
+INSERT INTO Curso (denominacion) VALUES ('Programacion Orientada a Objetos');
+INSERT INTO Curso (denominacion) VALUES ('Sistemas Expertos');
+INSERT INTO Curso (denominacion) VALUES ('Politica');     
+
+//registro de Alumnos
+INSERT INTO matricula.alumno (codigo, nombre, `apPaterno`, `apMaterno`) VALUES ('2008231178', 'Jean', 'Muguerza', 'Carpio');
+INSERT INTO matricula.alumno (codigo, nombre, `apPaterno`, `apMaterno`) VALUES ('2008231179', 'Mabel', 'Gutierrez', 'Cotrado');
+INSERT INTO matricula.alumno (codigo, nombre, `apPaterno`, `apMaterno`) VALUES ('2016132456', 'Manuel', 'Palma', 'Pajares');
+INSERT INTO matricula.alumno (codigo, nombre, `apPaterno`, `apMaterno`) VALUES ('2012282930', 'Arturo', 'Arcos', 'Perez');
+INSERT INTO matricula.alumno (codigo, nombre, `apPaterno`, `apMaterno`) VALUES ('2013131516', 'Atonia', 'Nuñes', 'Palomino');
+INSERT INTO matricula.alumno (codigo, nombre, `apPaterno`, `apMaterno`) VALUES ('2014345678', 'Marcela', 'Quispe', 'Araos');
+INSERT INTO matricula.alumno (codigo, nombre, `apPaterno`, `apMaterno`) VALUES ('2009345678', 'Atonia', 'Nuñes', 'Cotrado');
+INSERT INTO matricula.alumno (codigo, nombre, `apPaterno`, `apMaterno`) VALUES ('2015123479', 'Carla', 'Candy', 'Siempre');
+
+//registro Curso Matricula
+INSERT INTO matricula.cursomatricula (ciclo, calificacion, `idCurso`, codigo) VALUES ('II', '14', 1, '2008231178');
+INSERT INTO matricula.cursomatricula (ciclo, calificacion, `idCurso`, codigo) VALUES ('VII', '13', 2, '2008231179');
+INSERT INTO matricula.cursomatricula (ciclo, calificacion, `idCurso`, codigo) VALUES ('II', '12', 3, '2008231178');
+INSERT INTO matricula.cursomatricula (ciclo, calificacion, `idCurso`, codigo) VALUES ('VIII', '12', 7, '2012282930');
+INSERT INTO matricula.cursomatricula (ciclo, calificacion, `idCurso`, codigo) VALUES ('VIII', '14', 4, '2013131516');
+INSERT INTO matricula.cursomatricula (ciclo, calificacion, `idCurso`, codigo) VALUES ('VIII', '09', 4, '2009345678');
+INSERT INTO matricula.cursomatricula (ciclo, calificacion, `idCurso`, codigo) VALUES ('IV', '09', 6, '2016132456');
+INSERT INTO matricula.cursomatricula (ciclo, calificacion, `idCurso`, codigo) VALUES ('V', '11', 7, '2015123479');
+INSERT INTO matricula.cursomatricula (ciclo, calificacion, `idCurso`, codigo) VALUES ('VII', '11', 8, '2009345678');
+
