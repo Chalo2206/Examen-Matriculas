@@ -47,6 +47,7 @@ public class DlgCurso extends javax.swing.JDialog {
         btnCerrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Cursos");
 
         jLabel1.setText("Nombre");
 
