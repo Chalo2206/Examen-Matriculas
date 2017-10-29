@@ -16,7 +16,7 @@ public class ConexionSingleton {
             try{
                 Class.forName("com.mysql.jdbc.Driver");
                         
-                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Matriculas", "usuario", "Chalo1122");
+                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Matricula", "usuario", "Chalo1122");
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(ConexionSingleton.class.getName()).log(Level.SEVERE, null, ex);
             } catch (SQLException ex) {
